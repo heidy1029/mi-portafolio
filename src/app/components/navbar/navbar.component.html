@@ -1,30 +1,31 @@
-<nav class="navbar">
+<nav class="fixed top-0 left-0 w-full flex justify-between items-center px-10 py-4 bg-gradient-to-r from-[#ff5757] to-purple-700 text-white z-[1000]">
   <!-- Logo y Nombre -->
-  <div class="logo-container">
-    <img src="assets/logo.png" alt="Logo" class="logo">
-    <h1>Heidy Díaz</h1>
+  <div class="flex items-center gap-2">
+    <img src="assets/logo.png" alt="Logo" class="w-[50px] h-[50px]" />
+    <h1 class="text-xl font-bold uppercase">Heidy Díaz</h1>
   </div>
 
   <!-- Menú de escritorio -->
-  <ul class="nav-links" *ngIf="!isMobileMenuOpen">
-    <li><a href="#home">Inicio</a></li>
-    <li><a href="#about">Sobre Mí</a></li>
-    <li><a href="#projects">Proyectos</a></li>
-    <li><a href="#contact">Contacto</a></li>
+  <ul class="hidden md:flex gap-5 list-none" *ngIf="!isMobileMenuOpen">
+    <li><a href="#home" class="text-white text-lg font-bold hover:text-white/70 transition">Inicio</a></li>
+    <li><a href="#about" class="text-white text-lg font-bold hover:text-white/70 transition">Sobre Mí</a></li>
+    <li><a href="#projects" class="text-white text-lg font-bold hover:text-white/70 transition">Proyectos</a></li>
+    <li><a href="#contact" class="text-white text-lg font-bold hover:text-white/70 transition">Contacto</a></li>
   </ul>
 
   <!-- Menú hamburguesa -->
-  <div class="menu-toggle" (click)="toggleMenu()" [class.open]="isMobileMenuOpen">
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="md:hidden flex flex-col gap-1 cursor-pointer" (click)="toggleMenu()" [class.open]="isMobileMenuOpen">
+    <span class="w-[25px] h-[3px] bg-white transition-all" [ngClass]="{'rotate-45 translate-y-[6px]': isMobileMenuOpen}"></span>
+    <span class="w-[25px] h-[3px] bg-white transition-all" [ngClass]="{'opacity-0': isMobileMenuOpen}"></span>
+    <span class="w-[25px] h-[3px] bg-white transition-all" [ngClass]="{'-rotate-45 -translate-y-[6px]': isMobileMenuOpen}"></span>
   </div>
 </nav>
 
 <!-- Menú desplegable en móviles -->
-<ul class="mobile-menu" [class.active]="isMobileMenuOpen">
-  <li><a href="#home">Inicio</a></li>
-  <li><a href="#about">Sobre Mí</a></li>
-  <li><a href="#projects">Proyectos</a></li>
-  <li><a href="#contact">Contacto</a></li>
+<ul class="md:hidden absolute top-[60px] left-0 w-full bg-gradient-to-r from-[#ff5757] to-purple-700 text-center py-5 list-none z-[10000] transition-all duration-300"
+    [ngClass]="{'flex flex-col': isMobileMenuOpen, 'hidden': !isMobileMenuOpen}">
+  <li class="py-2"><a href="#home" class="text-white text-lg font-bold">Inicio</a></li>
+  <li class="py-2"><a href="#about" class="text-white text-lg font-bold">Sobre Mí</a></li>
+  <li class="py-2"><a href="#projects" class="text-white text-lg font-bold">Proyectos</a></li>
+  <li class="py-2"><a href="#contact" class="text-white text-lg font-bold">Contacto</a></li>
 </ul>

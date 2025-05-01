@@ -30,7 +30,7 @@ export class ProjectsComponent {
         link: 'https://www.behance.net/gallery/219157743/Emergency3D'
       },
       {
-        title: 'Simulacion almacen con montacargas',
+        title: 'Paginas Web',
         image: 'assets/proyecto3.png',
         description: 'Este proyecto es de una simulación interactiva que permite a los usuarios experimentar la operación de un montacargas en un entorno de almacén.',
         rol:'Mi rol: me encargue de realizar las mecanicas del juego y de la parte interactiva de la simulación.',
