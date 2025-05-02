@@ -1,29 +1,43 @@
 <section class="projects">
   <h2>🚀 Proyectos</h2>
-  <div class="projects-container">
-    <div class="project-screen" *ngFor="let project of projects; let i = index" (click)="openProject(i)">
-      <div class="glitch">
-        <img [src]="project.images[0]" [alt]="'Imagen de ' + project.title">
-        <div class="glitch-text">{{ project.title }}</div>
-      </div>
+
+  <!-- Sección 1: Unity / Videojuegos -->
+<h3>🎮 Desarrollo de Videojuegos (Unity)</h3>
+<div class="projects-container">
+  <div class="project-screen"
+       *ngFor="let project of videojuegosProjects"
+       (click)="openProjectByTitle(project.title)">
+    <div class="glitch">
+      <img [src]="project.image[0]" [alt]="'Imagen de ' + project.title">
+      <div class="glitch-text">{{ project.title }}</div>
     </div>
   </div>
+</div>
 
-  <!-- Aseguramos que selectedProject sea válido -->
+<!-- Sección 2: Diseño Web -->
+<h3>💻 Diseño Web</h3>
+<div class="projects-container">
+  <div class="project-screen"
+       *ngFor="let project of webProjects"
+       (click)="openProjectByTitle(project.title)">
+    <div class="glitch">
+      <img [src]="project.image[0]" [alt]="'Imagen de ' + project.title">
+      <div class="glitch-text">{{ project.title }}</div>
+    </div>
+  </div>
+</div>
+
+  
+
+  <!-- Detalles del proyecto -->
   <div class="selecion" *ngIf="selectedProject !== -1 && selectedProject >= 0 && selectedProject < projects.length">
     <h3>{{ projects[selectedProject].title }}</h3>
-  
     <div class="project-gallery">
-      <img *ngFor="let img of projects[selectedProject].images" [src]="img" alt="Imagen del proyecto">
+      <img *ngFor="let img of projects[selectedProject].image" [src]="img" alt="Imagen del proyecto">
     </div>
-  
     <p>{{ projects[selectedProject].description }}</p>
     <p>{{ projects[selectedProject].rol }}</p>
     <p>{{ projects[selectedProject].herramientas }}</p>
-    <a *ngIf="projects[selectedProject].link" 
-       [href]="projects[selectedProject].link" target="_blank">Ver más</a>
+    <a *ngIf="projects[selectedProject].link" [href]="projects[selectedProject].link" target="_blank">Ver más</a>
   </div>
-  
-
-  
 </section>
