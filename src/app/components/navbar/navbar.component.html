@@ -1,31 +1,44 @@
-<nav class="fixed top-0 left-0 w-full flex justify-between items-center px-10 py-4 bg-gradient-to-r from-[#ff5757] to-purple-700 text-white z-[1000]">
-  <!-- Logo y Nombre -->
-  <div class="flex items-center gap-2">
-    <img src="assets/logo.png" alt="Logo" class="w-[50px] h-[50px]" />
-    <h1 class="text-xl font-bold uppercase">Heidy Díaz</h1>
-  </div>
+<nav class="fixed top-0 left-0 w-full flex flex-col md:flex-row justify-between items-center px-10 py-4 bg-gradient-to-r from-[#ff5757] to-purple-700 text-white z-[1000]">
+  <div class="w-full md:w-auto flex justify-between items-center">
+    <!-- Logo y Nombre -->
+    <div class="flex items-center gap-2">
+      <img src="assets/logo.png" alt="Logo" class="w-[50px] h-[50px]" />
+      <h1 class="text-xl font-bold uppercase">Heidy Díaz</h1>
+    </div>
 
+    <!-- Menú hamburguesa -->
+    <div class="md:hidden">
+      <!-- Icono hamburguesa -->
+      <svg *ngIf="!isMobileMenuOpen" (click)="toggleMenu()" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+
+      <!-- Icono cerrar -->
+      <svg *ngIf="isMobileMenuOpen" (click)="toggleMenu()" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </div>
+  </div>
+ 
   <!-- Menú de escritorio -->
-  <ul class="hidden md:flex gap-5 list-none" *ngIf="!isMobileMenuOpen">
+  <ul class="hidden md:flex gap-5 list-none absolute left-1/2 transform -translate-x-1/2">
     <li><a href="#home" class="text-white text-lg font-bold hover:text-white/70 transition">Inicio</a></li>
     <li><a href="#about" class="text-white text-lg font-bold hover:text-white/70 transition">Sobre Mí</a></li>
     <li><a href="#projects" class="text-white text-lg font-bold hover:text-white/70 transition">Proyectos</a></li>
     <li><a href="#contact" class="text-white text-lg font-bold hover:text-white/70 transition">Contacto</a></li>
   </ul>
 
-  <!-- Menú hamburguesa -->
-  <div class="md:hidden flex flex-col gap-1 cursor-pointer" (click)="toggleMenu()" [class.open]="isMobileMenuOpen">
-    <span class="w-[25px] h-[3px] bg-white transition-all" [ngClass]="{'rotate-45 translate-y-[6px]': isMobileMenuOpen}"></span>
-    <span class="w-[25px] h-[3px] bg-white transition-all" [ngClass]="{'opacity-0': isMobileMenuOpen}"></span>
-    <span class="w-[25px] h-[3px] bg-white transition-all" [ngClass]="{'-rotate-45 -translate-y-[6px]': isMobileMenuOpen}"></span>
+  <!-- Badge Ingeniera Multimedia -->
+  <div class="hidden md:block ml-auto px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-700 text-white text-lg sm:text-xl font-bold rounded-lg border-2 border-dashed border-white uppercase whitespace-nowrap">
+    Ingeniera Multimedia
   </div>
-</nav>
 
-<!-- Menú desplegable en móviles -->
-<ul class="md:hidden absolute top-[60px] left-0 w-full bg-gradient-to-r from-[#ff5757] to-purple-700 text-center py-5 list-none z-[10000] transition-all duration-300"
-    [ngClass]="{'flex flex-col': isMobileMenuOpen, 'hidden': !isMobileMenuOpen}">
-  <li class="py-2"><a href="#home" class="text-white text-lg font-bold">Inicio</a></li>
-  <li class="py-2"><a href="#about" class="text-white text-lg font-bold">Sobre Mí</a></li>
-  <li class="py-2"><a href="#projects" class="text-white text-lg font-bold">Proyectos</a></li>
-  <li class="py-2"><a href="#contact" class="text-white text-lg font-bold">Contacto</a></li>
-</ul>
+  <!-- Menú desplegable en móviles -->
+  <ul class="md:hidden w-full bg-gradient-to-r from-[#ff5757] to-purple-700 text-center py-5 list-none transition-all duration-300"
+      [ngClass]="{'flex flex-col': isMobileMenuOpen, 'hidden': !isMobileMenuOpen}">
+    <li class="py-2"><a href="#home" class="text-white text-lg font-bold">Inicio</a></li>
+    <li class="py-2"><a href="#about" class="text-white text-lg font-bold">Sobre Mí</a></li>
+    <li class="py-2"><a href="#projects" class="text-white text-lg font-bold">Proyectos</a></li>
+    <li class="py-2"><a href="#contact" class="text-white text-lg font-bold">Contacto</a></li>
+  </ul>
+</nav>

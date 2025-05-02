@@ -72,6 +72,7 @@ h2 {
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 10px;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .selecion h3 {
@@ -93,6 +94,15 @@ h2 {
  /* Alinea el texto a la izquierda */
 }
 
+.project-gallery {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+.project-gallery img {
+  max-height: 200px;
+  border-radius: 8px;
+}
 
 
 .selecion a {
@@ -114,4 +124,8 @@ h2 {
 
 .selecion a:hover {
   background: #000;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

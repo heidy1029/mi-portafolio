@@ -3,22 +3,27 @@
   <div class="projects-container">
     <div class="project-screen" *ngFor="let project of projects; let i = index" (click)="openProject(i)">
       <div class="glitch">
-        <img [src]="project.image" [alt]="project.title">
+        <img [src]="project.images[0]" [alt]="'Imagen de ' + project.title">
         <div class="glitch-text">{{ project.title }}</div>
       </div>
     </div>
   </div>
 
   <!-- Aseguramos que selectedProject sea válido -->
-<div class="selecion" *ngIf="selectedProject !== -1 && (selectedProject >= 0 && selectedProject < projects.length)">
-  <h3>{{ projects[selectedProject].title }}</h3>
-  <img [src]="projects[selectedProject].image" alt="Proyecto">
-  <p>{{ projects[selectedProject].description }}</p>
-  <p>{{ projects[selectedProject].rol }}</p>
-  <p>{{ projects[selectedProject].herramientas }}</p>
-  <a *ngIf="projects[selectedProject].link" 
-     [href]="projects[selectedProject].link" target="_blank">Ver más</a>
-</div>
+  <div class="selecion" *ngIf="selectedProject !== -1 && selectedProject >= 0 && selectedProject < projects.length">
+    <h3>{{ projects[selectedProject].title }}</h3>
+  
+    <div class="project-gallery">
+      <img *ngFor="let img of projects[selectedProject].images" [src]="img" alt="Imagen del proyecto">
+    </div>
+  
+    <p>{{ projects[selectedProject].description }}</p>
+    <p>{{ projects[selectedProject].rol }}</p>
+    <p>{{ projects[selectedProject].herramientas }}</p>
+    <a *ngIf="projects[selectedProject].link" 
+       [href]="projects[selectedProject].link" target="_blank">Ver más</a>
+  </div>
+  
 
   
 </section>

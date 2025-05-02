@@ -1,51 +1,60 @@
-<section class="about-container">
-  <div class="avatar-container">
-    <!-- Modelo de Spline -->
-    <iframe
-      id="splineAvatar"
-      src="https://my.spline.design/untitled-b81e93014ff4d2f5c6b08be73610bac6/" frameborder="0"></iframe>
-  </div>
-
-  <div class="info-container">
-    <h2>Sobre mí</h2>
-    <p>
-      ¡Hola! Soy Heidy Diaz, Soy ingeniera multimedia con énfasis en desarrollo de videojuegos, apasionada por la creación de experiencias interactivas. 
-      Trabajo con Unity (URP, Android, WebGL) y he diseñado simulaciones, juegos 2D y 3D. Me gusta explorar estilos como biopunk y medieval oscuro, combinando arte 
-      y tecnología para contar historias inmersivas.
+<section class="flex flex-wrap justify-center items-start gap-12 bg-[#04040C] p-8 sm:p-12 text-white">
+  
+  <!-- Info -->
+  <div class="flex-1 max-w-xl text-left sm:text-left space-y-6">
+    <h2 class="text-4xl font-bold">Sobre mí</h2>
+    <p class="text-lg text-justify leading-relaxed">
+      ¡Hola! Soy Heidy Diaz, ingeniera multimedia con énfasis en desarrollo de videojuegos, apasionada por la creación de experiencias interactivas. 
+      Trabajo con Unity (URP, Android, WebGL) y he diseñado simulaciones, juegos 2D y 3D. Me gusta explorar estilos como biopunk y medieval oscuro, 
+      combinando arte y tecnología para contar historias inmersivas.
     </p>
 
-    <div class="tech-container">
-      <div class="tech-section">
-        <h3>🖥️ Programas</h3>
-        <ul>
-          <li>Unity</li>
-          <li>Unreal Engine</li>
-          <li>Visual Studio</li>
-          <li>Blender</li>
-          <li>3ds Max</li>
-          <li>Photoshop</li>
-          <li>Canvas</li>
-          <li>Trello</li>
-          <li>Miro</li>
-          <li>Premier Pro</li>
-          <li>MagicaVoxel</li>
+    <!-- Habilidades -->
+    <div class="flex flex-wrap justify-center items-start gap-6 p-6 bg-[#1a1a1a] rounded-xl shadow-lg max-w-2xl mx-auto">
+      <!-- Programas -->
+      <div class="flex-1 min-w-[280px] space-y-3">
+        <h3 class="text-2xl font-semibold text-purple-400 drop-shadow-[2px_2px_0_#8a2be2]">🖥️ Programas</h3>
+        <ul class="flex flex-wrap gap-2">
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Unity</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Unreal Engine</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Visual Studio</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Blender</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">3ds Max</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Photoshop</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Canvas</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Trello</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Miro</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Premier Pro</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">MagicaVoxel</li>
         </ul>
       </div>
-    
-      <div class="tech-section">
-        <h3>⚙️ Tecnologías</h3>
-        <ul>
-          <li>Git/GitHub</li>
-          <li>Model-Viewer</li>
-          <li>Angular</li>
-          <li>React</li>
-          <li>Supabase</li>
-          <li>Firebase</li>
-          <li>Three.js</li>
-          <li><strong>Lenguajes de Programación:</strong> C#, C++,JavaScript</li>
-          <li>Diseño de Niveles e IA</li>
+
+      <!-- Tecnologías -->
+      <div class="flex-1 min-w-[280px] space-y-3">
+        <h3 class="text-2xl font-semibold text-purple-400 drop-shadow-[2px_2px_0_#8a2be2]">⚙️ Tecnologías</h3>
+        <ul class="flex flex-wrap gap-2">
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Git/GitHub</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Model-Viewer</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Angular</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">React</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Supabase</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Firebase</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Three.js</li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base font-semibold">
+            Lenguajes: <span class="font-normal">C#, C++, JavaScript</span>
+          </li>
+          <li class="bg-white/10 px-3 py-1 rounded-md text-base">Diseño de Niveles e IA</li>
         </ul>
       </div>
     </div>
   </div>
-  </section>
+  <!-- Avatar -->
+  <div class="flex justify-center items-center flex-1 w-full max-w-[800px]">
+    <iframe
+      id="splineAvatar"
+      src="https://my.spline.design/untitled-b81e93014ff4d2f5c6b08be73610bac6/"
+      frameborder="0"
+      class="w-full max-w-[600px] h-[600px] sm:h-[600px] sm:aspect-auto aspect-[4/5] rounded-lg"
+    ></iframe>
+  </div>
+</section>

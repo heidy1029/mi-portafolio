@@ -57,6 +57,21 @@
 .contact-btn:hover {
   background-color: #0056b3;
 }
+.spline-instruction {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  width: 100%;
+  font-style: italic;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
 
 /* Responsivo */
 @media (max-width: 768px) {
