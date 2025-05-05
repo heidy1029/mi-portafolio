@@ -32,24 +32,25 @@ export class ProjectsComponent {
         herramientas: 'Herramientas utilizadas: Unity, C#, Json, Supabase, Git, GitHub, Figma, Miro.',
         link: 'https://www.behance.net/gallery/219157743/Emergency3D'
       },
+    
       {
-        title: 'Emergency3D',
+        title: 'Joyloop',
         category: 'web',
-        image:['assets/projects/proyecto3.jpg', 'assets/projects/img2.jpg', 'assets/projects/img3.jpg'],
-        description: 'Este proyecto es de una simulación interactiva que permite a los usuarios experimentar la operación de un montacargas en un entorno de almacén.',
-        rol:'Mi rol: me encargue de realizar las mecanicas del juego y de la parte interactiva de la simulación.',
-        herramientas: 'Herramientas utilizadas: Unity, C#, Json, Supabase, Git, GitHub, Figma, Illustrator, Photoshop,Trello.',
+        image:['assets/web/web2.PNG', 'assets/web/web2_2.PNG', 'assets/web/web2_3.PNG', 'assets/web/web2_4.PNG'],
+        description: 'Este proyecto es una pagina web que ofrece un servicio de alquiler de videojuegos, Diseño UX/UI, etc en la modalidad de "Joyloop".',
+        rol:'Mi rol: Realice el desarrollo de la pagina web .',
+        herramientas: 'Herramientas utilizadas: Angular, TypeScript, Json, Supabase, Git, GitHub, Figma, Tailwind, Miro.',
         link: 'https://github.com/proyecto3'
       },
       {
-        title: 'PixelCodex',
+        title: ' Web Emergency3D',
         category: 'web',
-        image:['assets/projects/proyecto3.jpg', 'assets/projects/img2.jpg', 'assets/projects/img3.jpg'],
-        description: 'Este proyecto es de una simulación interactiva que permite a los usuarios experimentar la operación de un montacargas en un entorno de almacén.',
-        rol:'Mi rol: me encargue de realizar las mecanicas del juego y de la parte interactiva de la simulación.',
-        herramientas: 'Herramientas utilizadas: Unity, C#, Json, Supabase, Git, GitHub, Figma, Illustrator, Photoshop,Trello.',
+        image:['assets/web/web1.PNG', 'assets/web/web1_2.PNG', 'assets/web/web1_3.PNG', 'assets/web/web1_4.PNG', 'assets/web/web1_5.PNG'],
+        description: 'Este proyecto es una pagina web que contiene la información, minijuegos y las simulaciones del proyecto "Emergency3D".',
+        rol:'Mi rol: Me encargue de realizar la parte de la pagina web que contiene la información, minijuegos y las simulaciones del proyecto "Emergency3D".',
+        herramientas: 'Herramientas utilizadas: Angular, TypeScript, Json, Supabase, Git, GitHub, Figma, Tailwind, Miro.',
         link: 'https://github.com/proyecto3'
-      }
+      },
     ];
   
     videojuegosProjects: any[] = [];
