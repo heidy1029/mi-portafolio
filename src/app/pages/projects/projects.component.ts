@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -9,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
- 
+  @ViewChild('carouselContainer') carouselRef!: ElementRef;
     selectedProject: number = -1; // Asegurar que nunca sea null
   
     projects = [
@@ -73,5 +74,15 @@ export class ProjectsComponent {
         this.selectedProject = index;
       }
     }
+    scrollCarousel(direction: 'left' | 'right') {
+      const container = this.carouselRef.nativeElement;
+      const scrollAmount = 720; // ancho + margen
+    
+      if (direction === 'left') {
+        container.scrollLeft -= scrollAmount;
+      } else {
+        container.scrollLeft += scrollAmount;
+      }
   }
+}
     

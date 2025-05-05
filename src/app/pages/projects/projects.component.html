@@ -1,9 +1,12 @@
 <section class="projects">
-  <h2>🚀 Proyectos</h2>
+  <h2 class="text-4xl font-bold"> Proyectos</h2>
 
   <!-- Sección 1: Unity / Videojuegos -->
-<h3>🎮 Desarrollo de Videojuegos (Unity)</h3>
-<div class="projects-container">
+  <h3 class="text-2xl font-semibold  text-purple-400 drop-shadow-[2px_2px_0_#8a2be2] my-8">
+    🎮 Desarrollo de Videojuegos (Unity)
+  </h3>
+  <div class="projects-container">
+  
   <div class="project-screen"
        *ngFor="let project of videojuegosProjects"
        (click)="openProjectByTitle(project.title)">
@@ -15,7 +18,9 @@
 </div>
 
 <!-- Sección 2: Diseño Web -->
-<h3>💻 Diseño Web</h3>
+<h3 class="text-2xl font-semibold text-purple-400 drop-shadow-[2px_2px_0_#8a2be2] my-8">  💻 Diseño Web</h3>
+
+
 <div class="projects-container">
   <div class="project-screen"
        *ngFor="let project of webProjects"
@@ -29,15 +34,37 @@
 
   
 
-  <!-- Detalles del proyecto -->
-  <div class="selecion" *ngIf="selectedProject !== -1 && selectedProject >= 0 && selectedProject < projects.length">
-    <h3>{{ projects[selectedProject].title }}</h3>
-    <div class="project-gallery">
+ <!-- Detalles del proyecto -->
+<div class="selecion" *ngIf="selectedProject !== -1 && selectedProject >= 0 && selectedProject < projects.length"> 
+  <h3>{{ projects[selectedProject].title }}</h3>
+
+  <!-- Carrusel con flechas -->
+  <div class="carousel-wrapper">
+    <button class="carousel-btn left gradient-arrow carrusel-arrow" (click)="scrollCarousel('left')">
+      &#10094;
+    </button>
+  
+    <div class="project-carousel" #carouselContainer>
       <img *ngFor="let img of projects[selectedProject].image" [src]="img" alt="Imagen del proyecto">
     </div>
-    <p>{{ projects[selectedProject].description }}</p>
-    <p>{{ projects[selectedProject].rol }}</p>
-    <p>{{ projects[selectedProject].herramientas }}</p>
-    <a *ngIf="projects[selectedProject].link" [href]="projects[selectedProject].link" target="_blank">Ver más</a>
+  
+    <button class="carousel-btn right gradient-arrow carrusel-arrow" (click)="scrollCarousel('right')">
+      &#10095;
+    </button>
   </div>
+  
+  <p>{{ projects[selectedProject].description }}</p>
+  <p>{{ projects[selectedProject].rol }}</p>
+  <p>{{ projects[selectedProject].herramientas }}</p>
+  
+  <a *ngIf="projects[selectedProject].link" 
+  [href]="projects[selectedProject].link" 
+  target="_blank" 
+  class="gradient-arrow">
+  Ver más
+</a>
+</div>
+
+
+
 </section>

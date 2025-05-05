@@ -93,39 +93,120 @@ h2 {
   text-align: justify;
  /* Alinea el texto a la izquierda */
 }
-
-.project-gallery {
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-carousel {
+  display: flex;
   overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  padding: 10px 0;
+  width: 90%;
+  scroll-behavior: smooth;
 }
-.project-gallery img {
-  max-height: 200px;
-  border-radius: 8px;
+
+.project-carousel img {
+  flex: 0 0 auto;
+  width: 800px;
+  height: auto;
+  border-radius: 10px;
+  scroll-snap-align: center;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.project-carousel img:hover {
+  transform: scale(1.02);
+}
+
+.carousel-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50%;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-btn.left {
+  left: 0;
+}
+
+.carousel-btn.right {
+  right: 0;
+}
+
+/* Ocultar scroll */
+.project-carousel::-webkit-scrollbar {
+  display: none;
+}
+.project-carousel {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 
-.selecion a {
-    margin-top: -60px; /* Ajusta la posición para que suba más */
-    padding: 12px 24px; /* Aumenta el tamaño del botón */
-    background: linear-gradient(45deg, #ff5757, #8a2be2);
-    color: white;
-    font-size: 1.2rem; /* Aumenta el tamaño del texto */
-    font-weight: bold;
-    border-radius: 10px;
-    position: relative;
-    z-index: 10;
-    white-space: nowrap;
-    border: 2px dashed white;
-    text-transform: uppercase; 
-    text-decoration: none;
-    
+.gradient-arrow {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #7e22ce, #ec4899);
+  color: white;
+  animation: pulse 2s infinite;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 30px;
+}
+
+/* Mejora la ubicación sobre las imágenes */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+.carousel-btn.left {
+  left: -40px; /* ajusta si es necesario */
+}
+
+.carousel-btn.right {
+  right: -40px; /* ajusta si es necesario */
+}
+
+/* Pulse animation (opcional si ya lo tienes) */
+@keyframes pulse {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
   }
-
-.selecion a:hover {
-  background: #000;
+  50% {
+    transform: translateY(-50%) scale(1.1);
+    opacity: 0.8;
+  }
 }
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 768px) {
+  .carousel-btn {
+    display: none;
+  }
 }
