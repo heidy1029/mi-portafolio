@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "docs",
+            "outputPath": "dist/mi-portafolio/browser",
             "index": "src/index.html",
             "baseHref": "/mi-portafolio/",
             "polyfills": [
@@ -93,9 +93,9 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-    "baseHref": "/mi-portafolio/",
-    "deployUrl": "/mi-portafolio/",
-    "outputPath": "docs"
+   "outputPath": "dist/mi-portafolio/browser",
+"baseHref": "/mi-portafolio/",
+"deployUrl": "/mi-portafolio/"
   }
           
           
