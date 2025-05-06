@@ -11,22 +11,24 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-          "outputPath": "docs",
-          "index": "src/index.html",
-          "baseHref": "/PortafolioES/",
-          "browser": "src/main.ts",
-          "polyfills": [
-            "zone.js"
-          ],
+            "outputPath": "docs",
+            "index": "src/index.html",
+            "baseHref": "/PortafolioES/",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico","src/assets"
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "main": "src/main.ts"
           },
           "configurations": {
             "production": {
