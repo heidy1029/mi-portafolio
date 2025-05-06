@@ -15,7 +15,7 @@
           "options": {
             "outputPath": "docs",
             "index": "src/index.html",
-            "baseHref": "/PortafolioES/",
+            "baseHref": "/mi-portafolio/",
             "polyfills": [
               "zone.js"
             ],
@@ -91,7 +91,14 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+    "baseHref": "/mi-portafolio/",
+    "deployUrl": "/mi-portafolio/",
+    "outputPath": "docs"
+  }
+          
+          
         }
       }
     }
