@@ -1,29 +1,43 @@
 /* Estilos generales */
 .projects {
   text-align: center;
-  padding: 50px 20px;
+  padding: 20px;
   background-color: RGB(4, 4, 12);
   color: #fff;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .projects {
+    padding: 50px 20px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
 }
 
 /* Contenedor de proyectos */
 .projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  padding: 0 10px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Tarjetas de proyecto */
 .project-screen {
   position: relative;
-  width: 250px;
-  height: 300px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  max-width: 250px;
+  margin: 0 auto;
   background: linear-gradient(45deg, #ff5757, #8a2be2);
   border-radius: 10px;
   overflow: hidden;
@@ -39,7 +53,8 @@ h2 {
 .project-screen img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0.8;
   transition: opacity 0.3s;
 }
@@ -59,11 +74,16 @@ h2 {
 }
 
 .glitch-text {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
 
+@media (min-width: 768px) {
+  .glitch-text {
+    font-size: 1.2rem;
+  }
 }
 
 /* Sección de proyecto seleccionado */
@@ -76,29 +96,44 @@ h2 {
 }
 
 .selecion h3 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
 .selecion img {
-  max-width: 80%;
+  max-width: 100%;
   height: auto;
   border-radius: 10px;
   margin: 10px 0;
 }
 
 .selecion p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.5;
   text-align: justify;
- /* Alinea el texto a la izquierda */
 }
+
+@media (min-width: 768px) {
+  .selecion h3 {
+    font-size: 1.8rem;
+  }
+  
+  .selecion p {
+    font-size: 1.2rem;
+  }
+  
+  .selecion img {
+    max-width: 80%;
+  }
+}
+
 .carousel-wrapper {
   position: relative;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px 0;
 }
 
 .project-carousel {
@@ -107,13 +142,14 @@ h2 {
   gap: 20px;
   scroll-snap-type: x mandatory;
   padding: 10px 0;
-  width: 90%;
+  width: 100%;
   scroll-behavior: smooth;
 }
 
 .project-carousel img {
   flex: 0 0 auto;
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   height: auto;
   border-radius: 10px;
   scroll-snap-align: center;
@@ -129,7 +165,7 @@ h2 {
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   padding: 10px 15px;
   border-radius: 50%;
@@ -137,6 +173,14 @@ h2 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .carousel-btn {
+    display: block;
+    font-size: 2rem;
+  }
 }
 
 .carousel-btn.left {
@@ -151,16 +195,16 @@ h2 {
 .project-carousel::-webkit-scrollbar {
   display: none;
 }
+
 .project-carousel {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-
 .gradient-arrow {
   display: inline-block;
   padding: 0.5rem 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   border-radius: 9999px;
   background: linear-gradient(to right, #7e22ce, #ec4899);
@@ -170,26 +214,16 @@ h2 {
   border: none;
   text-decoration: none;
   cursor: pointer;
-  margin: 30px;
+  margin: 20px 0;
 }
 
-/* Mejora la ubicación sobre las imágenes */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 20;
+@media (min-width: 768px) {
+  .gradient-arrow {
+    font-size: 1.2rem;
+    margin: 30px;
+  }
 }
 
-.carousel-btn.left {
-  left: -40px; /* ajusta si es necesario */
-}
-
-.carousel-btn.right {
-  right: -40px; /* ajusta si es necesario */
-}
-
-/* Pulse animation (opcional si ya lo tienes) */
 @keyframes pulse {
   0%, 100% {
     transform: translateY(-50%) scale(1);
@@ -204,9 +238,4 @@ h2 {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
-}
-@media (max-width: 768px) {
-  .carousel-btn {
-    display: none;
-  }
 }

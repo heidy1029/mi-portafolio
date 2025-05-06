@@ -40,7 +40,7 @@
 
   <!-- Carrusel con flechas -->
   <div class="carousel-wrapper">
-    <button class="carousel-btn left gradient-arrow carrusel-arrow" (click)="scrollCarousel('left')">
+    <button class="carousel-btn left gradient-arrow " (click)="scrollCarousel('left')">
       &#10094;
     </button>
   
@@ -48,7 +48,7 @@
       <img *ngFor="let img of projects[selectedProject].image" [src]="img" alt="Imagen del proyecto">
     </div>
   
-    <button class="carousel-btn right gradient-arrow carrusel-arrow" (click)="scrollCarousel('right')">
+    <button class="carousel-btn right gradient-arrow " (click)="scrollCarousel('right')">
       &#10095;
     </button>
   </div>
